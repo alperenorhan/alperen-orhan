@@ -24,9 +24,27 @@ app.get("/test_json", (req, res) => {
     })
 })
 app.get("/homepage", (req, res) => {
+    
 })
 app.get("/test_geocode", (req, res) => {
 })
 app.get("/test_weather", (req, res) => {
-    console.log("Sayfaya girildi.")
+    axios
+.get('http://api.weatherstack.com/current?access_key=336f9729f433c6b1bf9f9630f93bd171&query=Bursa')
+.then(response => {
+    var temperature = response.data.current.temperature
+    var pressure = response.data.current.pressure
+    var humidity = response.data.current.humidity
+    var city = response.data.request.query
+
+    res.write(city)
+    res.write("Sıcaklık : " + temperature)
+    res.write("Basınç : " + pressure)
+    res.write("Nem : " + humidity)
+    res.end();
+})
+    
+.catch(error => {
+  console.error(error)
+})
 })
