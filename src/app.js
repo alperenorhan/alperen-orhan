@@ -22,7 +22,7 @@ app.get("/test_json", (req, res) => {
     })
 })
 app.get("/homepage", (req, res) => {
-    console.log("Sayfaya girildi.")
+    res.sendFile("C:\Users\bilmuh\Desktop\web-server\index.html")
 })
 app.get("/test_geocode", (req, res) => {
     console.log("Sayfaya girildi.")
