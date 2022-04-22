@@ -1,5 +1,7 @@
 const express = require("express");
+const axios = require("axios")
 const app = express();
+const weather = require("./utils/weather.js")
 
 const port = process.env.PORT || 3000;
 
@@ -22,10 +24,8 @@ app.get("/test_json", (req, res) => {
     })
 })
 app.get("/homepage", (req, res) => {
-    res.sendFile("C:\Users\bilmuh\Desktop\web-server\index.html")
 })
 app.get("/test_geocode", (req, res) => {
-    console.log("Sayfaya girildi.")
 })
 app.get("/test_weather", (req, res) => {
     console.log("Sayfaya girildi.")
