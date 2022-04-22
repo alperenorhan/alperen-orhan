@@ -1,7 +1,8 @@
 const express = require("express");
 const axios = require("axios")
 const app = express();
-const weather = require("./utils/weather.js")
+const weather = require("./utils/weather.js");
+
 
 const port = process.env.PORT || 3000;
 
@@ -24,7 +25,6 @@ app.get("/test_json", (req, res) => {
     })
 })
 app.get("/homepage", (req, res) => {
-    
 })
 app.get("/test_geocode", (req, res) => {
 })
@@ -38,9 +38,9 @@ app.get("/test_weather", (req, res) => {
     var city = response.data.request.query
 
     res.write(city)
-    res.write("Sıcaklık : " + temperature)
-    res.write("Basınç : " + pressure)
-    res.write("Nem : " + humidity)
+    res.write("Sıcaklık : " + temperature + "<br>")
+    res.write("Basınç : " + pressure + "<br>")
+    res.write("Nem : " + humidity + "<br>")
     res.end();
 })
     
